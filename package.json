@@ -1,28 +1,49 @@
 {
   "name": "ol-react-test",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
+  "description": "Vite TypeScript library npm package template",
+  "license": "ISC",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "vite",
+    "dev": "tsc && vite build --watch",
+    "start": "vite --host --open",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "lint:scripts": "eslint . --ext .ts",
+    "lint:styles": "stylelint ./**/*.{css,scss}",
+    "format:scripts": "prettier . --write",
+    "format:styles": "stylelint ./**/*.{css,scss} --fix"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.10.6",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.5.4"
   }
 }
