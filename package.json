@@ -1,6 +1,6 @@
 {
   "name": "ol-react-test",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "type": "module",
   "description": "Vite TypeScript library npm package template",
   "license": "ISC",
@@ -45,5 +45,4 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.5.4"
-  }
-}
+  } }

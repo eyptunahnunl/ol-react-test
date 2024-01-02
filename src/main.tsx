@@ -1,14 +1,16 @@
 
+import "ol/ol.css";
 
-import { isOdd,MapComponent } from './index'
+import { MapComponent } from './index'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
+import './index.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-        Use this to run a local development environment of the library for testing
-  <MapComponent/>
+    <MapComponent>
+
+    </MapComponent>
   </React.StrictMode>,
 )
