@@ -4,10 +4,10 @@ import { fromLonLat } from "ol/proj";
 import { ReactNode, useCallback } from "react";
 import OSM from "ol/source/OSM.js";
 import Map from "ol/Map.js";
-import MapContext from "context/MapContext";
+import MapContext from "../../context/MapContext";
 
 interface MapComponentProps {
-  childeren?: ReactNode;
+  children?: ReactNode;
   id: any;
   className?: any;
 }
@@ -57,7 +57,7 @@ const MapComponent = (props: MapComponentProps) => {
         className={props.className}
         role="presentation"
       >
-        {props.childeren}
+        {props.children}
       </div>
     </MapContext.Provider>
   );

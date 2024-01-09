@@ -1,14 +1,28 @@
 
 import "ol/ol.css";
 
-import { MapComponent } from './index'
+import { MapComponent,useMap } from './index'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
 
+const Test = () => {
+  const map =useMap()
+  console.log('first',map)
+  return (
+    <div>Test</div>
+  )
+}
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-
-  </React.StrictMode>,
+  <>
+    <MapComponent id='map' className='map'>
+      <Test/>
+    </MapComponent>
+  </>,
 )
+
+
+
+
+

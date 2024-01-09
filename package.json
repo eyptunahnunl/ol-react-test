@@ -1,8 +1,9 @@
 {
   "name": "ol-react-test",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "type": "module",
-  "description": "Vite TypeScript library npm package template",
+  "author": {"name": "tunadev_","email": "etunaunal@gmail.com"},
+  "description": "React openlayers library test",
   "license": "ISC",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -21,6 +22,7 @@
     "format:styles": "stylelint ./**/*.{css,scss} --fix"
   },
   "dependencies": {
+    "ol": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -45,4 +47,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-dts": "^3.5.4"
-  } }
+  }
+}

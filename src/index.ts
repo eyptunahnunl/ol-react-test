@@ -1,4 +1,4 @@
-import { useMap } from "./hooks/useMap";
-export { default as MapComponent } from "./components/Map";
+import {useMap} from "./hooks/useMap";
+import MapComponent from "./components/Map";
 
-export { useMap };
+export { useMap, MapComponent };
