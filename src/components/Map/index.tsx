@@ -1,27 +1,24 @@
 import { View } from "ol";
-import OSM from 'ol/source/OSM.js';
 import TileLayer from "ol/layer/Tile";
-import Map from 'ol/Map.js';
-
 import { fromLonLat } from "ol/proj";
 import { ReactNode, useCallback } from "react";
-interface IProps {
-  children?: ReactNode;
-  zoom?: number;
-  center?: number[];
+import OSM from "ol/source/OSM.js";
+import Map from "ol/Map.js";
+import MapContext from "context/MapContext";
+
+interface MapComponentProps {
+  childeren?: ReactNode;
+  id: any;
+  className?: any;
 }
-
-const MapComponent = ({ children, ...passThroughProps }: IProps) => {
+const MapComponent = (props: MapComponentProps) => {
   const defaultMap = () => {
- 
-
     const center = fromLonLat([35.240741, 38.9573415]);
-
     const options = {
       view: new View({
         zoom: 7,
         center,
-        projection: 'EPSG:3857',
+        projection: "EPSG:3857",
         constrainOnlyCenter: true,
         minZoom: 2.6,
         maxZoom: 20,
@@ -38,7 +35,6 @@ const MapComponent = ({ children, ...passThroughProps }: IProps) => {
 
     return mapObject;
   };
-
   const map = defaultMap();
   const refCallback = useCallback(
     (ref: HTMLDivElement) => {
@@ -51,21 +47,20 @@ const MapComponent = ({ children, ...passThroughProps }: IProps) => {
         map.setTarget(ref);
       }
     },
-    [map]
+    [map],
   );
   return (
-    <div
-    id="map"
-    ref={refCallback}
-    className="map"
-    role="presentation"
-    // tabIndex={0}
-    {...passThroughProps}
-  >
-    
-    {children}
-  </div>
-  )
-}
+    <MapContext.Provider value={map}>
+      <div
+        id={props.id}
+        ref={refCallback}
+        className={props.className}
+        role="presentation"
+      >
+        {props.childeren}
+      </div>
+    </MapContext.Provider>
+  );
+};
 
-export default MapComponent
+export default MapComponent;
